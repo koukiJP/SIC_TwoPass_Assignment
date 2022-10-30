@@ -432,14 +432,14 @@ void WRITESYMTABLES()
 
 void OUTPUT()
 {
-  cout << "---" << setw(5) << "" << "ASM Listing" << setw(5) << "---" << endl;
+  cout << "---" << setw(3) << "" << "ASM Listing"  << setw(5) << "---" << endl;
   in.open(ASMListingName,ios::in);
   while (in.getline(_c , 150))
   {
     cout << _c << endl;
   }
   in.close();
-  cout << "---" << setw(5) << "" << "Target Code" << setw(5) << "---" << endl;
+  cout << "---" << setw(3) << ""  << "Target Code"  << setw(5) << "---" << endl;
   in.open(TargetCodeName,ios::in);
   while (in.getline(_c , 150))
   {
