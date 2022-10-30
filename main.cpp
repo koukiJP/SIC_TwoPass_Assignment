@@ -413,7 +413,7 @@ void PASS2()
       if(!BUFFER.empty())           // write last Text record to obj program
         WRITENEWTEXTLINE();
       out << "E^" << Format3Byte(STARTADDR) << endl;  // write END record to obj program
-      out2 << "\t\t\t\t" << OPCODE << '\t' << OPERAND << endl;
+      out2 << "  " << right << setw(11) << " " << setw(10) << OPCODE << setw(11) << OPERAND << endl;
     }
 
   }

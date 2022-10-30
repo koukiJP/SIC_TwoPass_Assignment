@@ -42,4 +42,4 @@
 2076                 JLT     WLOOP    382064
 2079                RSUB              4C0000
 207A    OUTPUT      BYTE     X'05'        05
-				END	FIRST
+                    END      FIRST

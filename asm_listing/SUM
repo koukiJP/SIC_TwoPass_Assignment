@@ -10,4 +10,4 @@
 5788     COUNT      RESW         1
 578B      ZERO      WORD         0    000000
 578E     TOTAL      RESW         1
-				END	FIRST
+                    END      FIRST
