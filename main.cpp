@@ -26,7 +26,7 @@ map<string , string> optab;
 map<string , string> symtab;
 map<string , string> objtab;
 string TargetCodeName = "TargetCode/";
-string ASMListingName = "asm_Listing/";
+string ASMListingName = "asm_listing/";
 
 
 // Basic Function
