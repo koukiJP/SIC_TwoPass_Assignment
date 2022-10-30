@@ -11,4 +11,4 @@ fi
 g++ NeVerUsENaMe.cpp -o a
 ./a
 rm a NeVerUsENaMe.cpp
-echo   "${COLOR_GREEN}✔Program is already done!${COLOR_REST}"
+echo   "✔Program is already done!"
