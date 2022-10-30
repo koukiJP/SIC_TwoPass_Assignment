@@ -5,7 +5,8 @@
 #include <map>
 #include <iomanip>
 using namespace std;
-
+// ignore C++ 11 extension warning
+#pragma GCC diagnostic ignored "-Wc++11-extensions"
 // Global var
 
 stringstream ss;
