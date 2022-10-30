@@ -31,8 +31,8 @@ System Program Assignment 1
 ## Usage
 
 ```sh
-$ git clone https://github.com/koukiJP/SIC_TwoPass_Assignment.git
-$ cd SIC_TwoPass Assignment
-$ runc.sh main.cpp
+git clone https://github.com/koukiJP/SIC_TwoPass_Assignment.git
+cd SIC_TwoPass Assignment
+runc.sh main.cpp
 # chose the Source Program you want to translate into Target Code :
 ```
