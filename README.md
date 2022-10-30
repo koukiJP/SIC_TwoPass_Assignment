@@ -23,7 +23,7 @@ System Program Assignment 1
 │   ├── intermediate.txt
 │   └── symtab.txt
 ├── main.cpp                    // main cpp file
-└── runc.sh                     // Sample bash file to execute C/C++
+└── runc.sh                     // Simple bash file to execute C/C++
 ```
 
 ---
