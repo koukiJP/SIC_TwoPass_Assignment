@@ -20,11 +20,14 @@ string STARTADDR;
 string PROLENGTH;
 string LABEL , OPCODE , OPERAND;
 string OBJADDR , ADDR , TS;
-char _c[100];
+char _c[150];
 int ct;
 map<string , string> optab;
 map<string , string> symtab;
 map<string , string> objtab;
+string TargetCodeName = "TargetCode/";
+string ASMListingName = "Asm_Listing/";
+
 
 // Basic Function
 
@@ -98,7 +101,7 @@ void READOPTABLE()
   in.open("interTables/OPTABLE.txt",ios::in);
   ssclean(ss);
   string _INS , _OPCODE;
-  while(in.getline(_c,100))
+  while(in.getline(_c,150))
   {
     ss << _c;
     ss >> _INS >> _OPCODE;
@@ -116,7 +119,7 @@ void PASS1()
   cin >> x;
   switch(x){
     case 1:
-      fileDIR.append("test.txt");   break;
+      fileDIR.append("COPY_Ver_TextBook.txt");   break;
     case 2:
       fileDIR.append("COPY.txt");   break;
     case 3:
@@ -124,11 +127,11 @@ void PASS1()
     case 4:
       fileDIR.append("COUNT.txt");  break;
     default:
-      fileDIR.append("test.txt");   break;
+      fileDIR.append("COPY_Ver_TextBook.txt");   break;
   }
   in.open(fileDIR,ios::in);
   out.open("interTables/intermediate.txt",ios::out);
-  while(in.getline(_c,100))
+  while(in.getline(_c,150))
   {
     // comment
     if(_c[0] == '.')
@@ -295,8 +298,6 @@ string INDEXADDR(string X)
 
 void PASS2()
 {
-  string TargetCodeName = "TargetCode/";
-  string ASMListingName = "Asm_Listing/";
   TargetCodeName.append(PRONAME);
   ASMListingName.append(PRONAME);
   in.open("interTables/intermediate.txt",ios::in);
@@ -304,7 +305,7 @@ void PASS2()
   out2.open(ASMListingName,ios::out);
   ssclean(ss);
   OBJADDR = STARTADDR; // init Text Record
-  while(in.getline(_c,100))
+  while(in.getline(_c,150))
   {
     if(_c[0] == '.')  // if is comment
       continue;
@@ -428,10 +429,30 @@ void WRITESYMTABLES()
     out << x.first << '\t' << x.second << endl;
   out.close();
 }
+
+void OUTPUT()
+{
+  cout << "---" << setw(5) << "" << "ASM Listing" << setw(5) << "---" << endl;
+  in.open(ASMListingName,ios::in);
+  while (in.getline(_c , 150))
+  {
+    cout << _c << endl;
+  }
+  in.close();
+  cout << "---" << setw(5) << "" << "Target Code" << setw(5) << "---" << endl;
+  in.open(TargetCodeName,ios::in);
+  while (in.getline(_c , 150))
+  {
+    cout << _c << endl;
+  }
+  in.close(); 
+}
+
 int main()
 {
   READOPTABLE();
   PASS1();
   PASS2();
   WRITESYMTABLES();
+  OUTPUT();
 }
