@@ -1,0 +1,25 @@
+1000     COUNT     START      1000
+1003     FIRST       LDA      ZERO    001030
+1006                 STA     ZEROC    0C103C
+1009                 STA     INDEX    0C103F
+100C      LOOP       LDX     INDEX    04103F
+100F                 LDA   ALPHA,X    009042
+1012                COMP      ZERO    281030
+1015                 JLT      SKIP    381021
+1018                 JGT      SKIP    341021
+101B                 LDA     ZEROC    00103C
+101E                 ADD       ONE    181033
+1021                 STA     ZEROC    0C103C
+1024      SKIP       LDA     INDEX    00103F
+1027                 ADD     THREE    181036
+102A                 STA     INDEX    0C103F
+102D                COMP  ARRAYEND    281039
+1030                 JLT      LOOP    381009
+1033      ZERO      WORD         0    000000
+1036       ONE      WORD         1    000001
+1039     THREE      WORD         3    000003
+103C  ARRAYEND      WORD      1500    0005DC
+103F     ZEROC      RESW         1
+1042     INDEX      RESW         1
+161E     ALPHA      RESW       500
+				END	FIRST

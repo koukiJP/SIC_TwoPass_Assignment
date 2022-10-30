@@ -1,0 +1,13 @@
+4000       SUM     START      4000
+4003     FIRST       LDX      ZERO    045788
+4006                 LDA      ZERO    005788
+4009      LOOP       ADD   TABLE,X    18C015
+400C                 TIX     COUNT    2C5785
+400F                 JLT      LOOP    384006
+4012                 STA     TOTAL    0C578B
+4015                RSUB              4C0000
+5785     TABLE      RESW      2000
+5788     COUNT      RESW         1
+578B      ZERO      WORD         0    000000
+578E     TOTAL      RESW         1
+				END	FIRST
